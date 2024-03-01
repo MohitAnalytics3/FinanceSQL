@@ -1,0 +1,57 @@
+-- Create a table to store transaction data
+CREATE TABLE transactions (
+    transaction_id INT,
+    transaction_date DATE,
+    amount DECIMAL(10, 2),
+    category VARCHAR(50)
+);
+
+-- Insert sample transaction data
+INSERT INTO transactions (transaction_id, transaction_date, amount, category)
+VALUES 
+    (1, '2024-01-01', 100.00, 'Groceries'),
+    (2, '2024-01-05', 50.00, 'Dining Out'),
+    (3, '2024-01-10', 200.00, 'Shopping'),
+    (4, '2024-02-01', 150.00, 'Groceries'),
+    (5, '2024-02-10', 75.00, 'Dining Out'),
+    (6, '2024-02-20', 300.00, 'Shopping');
+
+-- Query to calculate monthly expenditure breakdown
+SELECT 
+    EXTRACT(MONTH FROM transaction_date) AS month,
+    SUM(amount) AS total_amount,
+    category
+FROM 
+    transactions
+GROUP BY 
+    EXTRACT(MONTH FROM transaction_date),
+    category
+ORDER BY 
+    month,
+    total_amount DESC;
+
+-- Query to calculate category-wise spending trends
+SELECT 
+    category,
+    SUM(amount) AS total_amount
+FROM 
+    transactions
+GROUP BY 
+    category
+ORDER BY 
+    total_amount DESC;
+
+-- Query to compare spending against budget targets
+SELECT 
+    category,
+    SUM(amount) AS total_amount,
+    CASE 
+        WHEN category = 'Groceries' AND SUM(amount) > 200 THEN 'Over Budget'
+        WHEN category = 'Dining Out' AND SUM(amount) > 100 THEN 'Over Budget'
+        WHEN category = 'Shopping' AND SUM(amount) > 300 THEN 'Over Budget'
+        ELSE 'On Budget'
+    END AS budget_status
+FROM 
+    transactions
+GROUP BY 
+    category;
