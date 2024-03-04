@@ -9,7 +9,7 @@
 </ul>
 <p><strong>Getting Started:</strong></p>
 <ul>
-  <li>Clone the Repository: <code>git clone https://github.com/your-username/FinanceSQL.git</code></li>
+  <li>Clone the Repository: <code>git clone https://github.com/MohitAnalytics3/FinanceSQL/blob/main/scripts</code></li>
   <li>Explore the Scripts: Check out the <code>scripts/</code> directory for SQL scripts related to expense tracking, budget optimization, and analysis.</li>
   <li>Run the Scripts: Execute the SQL scripts against your own transaction data to gain insights into your personal finances.</li>
   <li>Contribute: Feel free to contribute to the project by suggesting improvements, submitting bug fixes, or adding new features.</li>
