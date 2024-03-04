@@ -15,4 +15,4 @@
   <li>Contribute: Feel free to contribute to the project by suggesting improvements, submitting bug fixes, or adding new features.</li>
 </ul>
 <p><strong>Credits:</strong></p>
-<p>FinanceSQL was developed by [Your Name]. If you find this project useful, consider giving it a star and sharing it with others. Thank you for your support!</p>
+<p>FinanceSQL was developed by Mohit Sharma. If you find this project useful, consider giving it a star and sharing it with others. Thank you for your support!</p>
